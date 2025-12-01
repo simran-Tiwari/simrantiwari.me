@@ -22,8 +22,10 @@ export default function Navbar({ dark, setDark }) {
 
       {/* Right: Nav Links + Theme Toggle */}
       <nav className="flex items-center gap-6 text-sm">
-        <NavLink href="#projects" label="Projects" />
+        <NavLink href="#hero" label="Home" />
         <NavLink href="#about" label="About" />
+        <NavLink href="#skills" label="Skills" />
+        <NavLink href="#projects" label="Projects" />
         <NavLink href="#contact" label="Contact" />
 
         {/* Theme Toggle */}

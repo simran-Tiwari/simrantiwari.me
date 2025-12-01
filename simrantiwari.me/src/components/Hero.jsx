@@ -1,15 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import simranImg from "../assets/simran.jpg"; // your profile image
+import simranImg from "../assets/simran.jpg";
 
-export default function Hero() {
+export default function Hero({ dark }) {
   const handleResumeDownload = () => {
     const resumeUrl = "/Simran_Tiwari_Resume.pdf";
-
-    // Open in a new tab
-    window.open(resumeUrl, "_blank");
-
-    // Trigger download
     const link = document.createElement("a");
     link.href = resumeUrl;
     link.download = "Simran_Tiwari_Resume.pdf";
@@ -21,61 +16,74 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="py-20 flex flex-col md:flex-row items-center gap-14"
+      className="relative py-24 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-12 overflow-hidden bg-transparent"
     >
       {/* LEFT CONTENT */}
       <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.6 }}
-        className="flex-1"
+        className="flex-1 max-w-lg"
       >
-        <p className="text-sm text-gray-500 dark:text-gray-400">Hello, I'm</p>
+        <p className={`text-sm font-medium tracking-wide ${dark ? "text-white" : "text-gray-700"}`}>
+          Hi, I’m
+        </p>
 
-        <h1 className="text-4xl md:text-5xl font-extrabold mt-2 leading-snug">
-          <span className="bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent">
+        <h1 className="mt-2 text-4xl md:text-5xl font-extrabold leading-snug">
+          <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-400 bg-clip-text text-transparent">
             Simran Tiwari
           </span>
         </h1>
 
-        <p className="mt-4 max-w-xl text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-          Full-Stack Developer & Cloud Enthusiast.  
-          I build fast, modern, and scalable applications using MERN Stack and AWS — 
-          crafting clean interfaces, optimized backends, and cloud-powered solutions.
+        <p className={`mt-4 text-lg leading-relaxed ${dark ? "text-white/90" : "text-gray-700"}`}>
+          A <strong>Full Stack Developer</strong> passionate about building <strong>fast, scalable web apps</strong> and <strong>cloud solutions</strong>. I love turning ideas into clean, efficient code and creating smooth, user-friendly experiences. Always exploring new tech to make <strong>digital ideas real</strong>.
         </p>
 
         <div className="mt-6 flex gap-4">
           <a
-            className="px-5 py-3 rounded-xl border hover:bg-gray-100 dark:hover:bg-gray-800 transition font-medium"
             href="#projects"
+            className="px-6 py-3 rounded-xl font-medium transition-transform duration-300 transform hover:scale-105 shadow-md bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 text-white hover:from-blue-600 hover:to-purple-700"
           >
-            View Projects
+            See My Work
           </a>
         </div>
       </motion.div>
 
       {/* RIGHT: Profile Card */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.7 }}
         className="flex-1 flex justify-center"
       >
-        <div className="bg-gray-50 dark:bg-gray-800 shadow-xl rounded-3xl p-6 flex flex-col items-center border border-gray-200 dark:border-gray-700 transition-transform transform hover:-translate-y-2 hover:shadow-2xl max-w-xs w-full">
-          
-          {/* Profile Picture Container */}
-          <div className="w-full h-64 md:h-72 rounded-3xl overflow-hidden border dark:border-gray-700 shadow-lg">
+        <div
+          className={`relative w-104 md:w-[32rem] lg:w-[36rem] rounded-3xl p-10 md:p-12 flex flex-col items-center shadow-2xl transition-transform duration-300 transform hover:-translate-y-6
+            ${dark
+              ? "bg-gradient-to-b from-black via-gray-800 to-gray-700 shadow-[0_15px_50px_rgba(0,0,0,0.6)]"
+              : "bg-gradient-to-b from-white via-gray-100 to-gray-200 shadow-[0_15px_50px_rgba(0,0,0,0.1)]"
+            }`}
+        >
+          {/* IMAGE */}
+          <div
+            className={`w-44 h-44 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-xl relative flex items-center justify-center
+              ${dark ? "bg-gradient-to-b from-black via-gray-800 to-gray-700" : "bg-white"}`}
+          >
             <img
               src={simranImg}
               alt="Simran Tiwari"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-2xl"
             />
           </div>
 
-          {/* Download Resume button */}
+          {/* Label below Image */}
+          <p className={`mt-4 text-center text-lg font-semibold ${dark ? "text-white" : "text-gray-900"}`}>
+            Simran Tiwari <br /> Software Engineer
+          </p>
+
+          {/* Download Button */}
           <button
             onClick={handleResumeDownload}
-            className="mt-6 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-500 via-indigo-500 to-violet-500 text-white font-medium shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 w-full"
+            className="mt-4 px-6 py-3 rounded-xl font-medium transition-transform duration-300 transform hover:scale-105 shadow-md bg-gradient-to-r from-blue-700 via-indigo-700 to-purple-800 text-white hover:from-blue-600 hover:to-purple-700"
           >
             Download Resume
           </button>

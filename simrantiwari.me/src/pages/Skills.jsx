@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Skills() {
+export default function Skills({ dark }) {
   const skillSections = [
     {
       title: "Frontend",
@@ -63,19 +63,20 @@ export default function Skills() {
     >
       {/* Parent Card */}
       <div
-        className="relative max-w-6xl mx-auto bg-white dark:bg-gray-900 rounded-3xl p-10 shadow-xl overflow-hidden"
-        style={{
-          background: "linear-gradient(135deg, #f0f4ff 0%, #d1f0f0 100%)",
-        }}
+        className={`relative max-w-6xl mx-auto rounded-3xl p-10 shadow-xl overflow-hidden ${
+          dark
+            ? "bg-gradient-to-b from-black via-gray-900 to-gray-800 text-white"
+            : "bg-gradient-to-r from-[#f0f4ff] to-[#d1f0f0] text-gray-900"
+        }`}
       >
         {/* Decorative Circles */}
-        <div className="absolute -top-16 -left-16 w-40 h-40 bg-purple-200 rounded-full opacity-30 filter blur-3xl"></div>
-        <div className="absolute -bottom-20 -right-16 w-60 h-60 bg-pink-200 rounded-full opacity-20 filter blur-2xl"></div>
+        <div className="absolute -top-16 -left-16 w-40 h-40 rounded-full bg-purple-300 opacity-30 filter blur-3xl"></div>
+        <div className="absolute -bottom-20 -right-16 w-60 h-60 rounded-full bg-pink-300 opacity-20 filter blur-2xl"></div>
 
-        <h1 className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white relative z-10">
+        <h1 className="text-4xl font-bold text-center mb-6 relative z-10">
           Skills & Growth
         </h1>
-        <p className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto relative z-10">
+        <p className="text-center mb-12 max-w-2xl mx-auto relative z-10">
           Building modern, clean, and efficient applications while continuously improving.
         </p>
 
@@ -83,15 +84,15 @@ export default function Skills() {
           {skillSections.map((section) => (
             <div
               key={section.title}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-blue-400 border border-transparent transition-all duration-300 cursor-pointer relative"
+              className={`rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-blue-400 border border-transparent transition-all duration-300 cursor-pointer ${
+                dark ? "bg-gray-900" : "bg-white"
+              }`}
             >
-              <h2 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">
-                {section.title}
-              </h2>
+              <h2 className="text-xl font-semibold mb-4">{section.title}</h2>
               <ul className="space-y-4">
                 {section.skills.map((skill) => (
                   <li key={skill.name} className="flex items-center justify-between">
-                    <span className="text-gray-800 dark:text-gray-200">{skill.name}</span>
+                    <span>{skill.name}</span>
                     <span
                       className={`px-2 py-1 text-xs font-medium rounded-full ${levelColors[skill.level]}`}
                     >

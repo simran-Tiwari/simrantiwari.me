@@ -6,7 +6,7 @@ import zoomeraImg from "../assets/zoomera.png";
 import acceldedupImg from "../assets/acceldedup.png";
 import devoasisImg from "../assets/devaosis.png";
 
-export default function Projects() {
+export default function Projects({ dark }) {
   const projects = [
     {
       title: "ShopVerse",
@@ -39,12 +39,19 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20">
+    <section
+      id="projects"
+      className={`py-20 px-6 md:px-12 ${
+        dark ? "bg-gradient-to-b from-black via-gray-900 to-gray-800 text-white" : ""
+      }`}
+    >
       <motion.h2
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-3xl md:text-4xl font-bold mb-10"
+        className={`text-3xl md:text-4xl font-bold mb-10 ${
+          dark ? "text-white" : "text-gray-900"
+        }`}
       >
         Projects
       </motion.h2>
@@ -53,7 +60,9 @@ export default function Projects() {
         {projects.map((p, index) => (
           <motion.div
             key={p.title}
-            className="group block rounded-2xl overflow-hidden shadow-sm hover:shadow-xl bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 transition-all"
+            className={`group block rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border ${
+              dark ? "bg-gray-900 border-gray-700" : "bg-white border-gray-100"
+            }`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -70,8 +79,10 @@ export default function Projects() {
 
             {/* Text */}
             <div className="p-5">
-              <h3 className="font-semibold text-xl">{p.title}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+              <h3 className={`font-semibold text-xl ${dark ? "text-white" : "text-gray-900"}`}>
+                {p.title}
+              </h3>
+              <p className={`text-sm mt-1 ${dark ? "text-gray-300" : "text-gray-600"}`}>
                 {p.tech}
               </p>
 

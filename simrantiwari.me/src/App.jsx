@@ -28,12 +28,13 @@ export default function App() {
       <Navbar dark={dark} setDark={setDark} />
 
       <main className="max-w-5xl mx-auto px-6 md:px-0 pt-24">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-      </main>
+          <Hero dark={dark} />
+          <About dark={dark} />
+          <Skills dark={dark} />
+          <Projects dark={dark} />
+          <Contact dark={dark} />
+</main>
+
 
       <Footer />
     </div>

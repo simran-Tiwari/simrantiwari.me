@@ -1,15 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-export default function Contact() {
+export default function Contact({ dark }) {
   return (
-    <section id="contact" className="py-20 space-y-10">
+    <section
+      id="contact"
+      className={`py-20 px-6 md:px-12 rounded-2xl overflow-hidden ${
+        dark ? "bg-gradient-to-b from-black via-gray-900 to-gray-800 text-white" : ""
+      }`}
+    >
       {/* Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-4xl font-bold"
+        className={`text-4xl font-bold mb-10 ${dark ? "text-white" : "text-gray-900"}`}
       >
         Contact
       </motion.h2>
@@ -19,13 +24,13 @@ export default function Contact() {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        className="space-y-3 text-lg"
+        className="space-y-3 text-lg mb-12"
       >
         <p>
           Email:{" "}
           <a
             href="mailto:tiwarisimran967@gmail.com"
-            className="text-primary font-medium hover:underline"
+            className={`font-medium hover:underline ${dark ? "text-blue-400" : "text-primary"}`}
           >
             tiwarisimran967@gmail.com
           </a>
@@ -35,7 +40,7 @@ export default function Contact() {
           Phone:{" "}
           <a
             href="tel:+918218612499"
-            className="text-primary font-medium hover:underline"
+            className={`font-medium hover:underline ${dark ? "text-blue-400" : "text-primary"}`}
           >
             +91 8218612499
           </a>
@@ -45,21 +50,21 @@ export default function Contact() {
           <a
             href="https://github.com/simran-Tiwari"
             target="_blank"
-            className="text-primary hover:underline"
+            className={`hover:underline ${dark ? "text-blue-400" : "text-primary"}`}
           >
             GitHub
           </a>
           <a
             href="https://www.linkedin.com/in/simran-tiwari-45b460300"
             target="_blank"
-            className="text-primary hover:underline"
+            className={`hover:underline ${dark ? "text-blue-400" : "text-primary"}`}
           >
             LinkedIn
           </a>
           <a
             href="https://leetcode.com/u/tiwarisimran967"
             target="_blank"
-            className="text-primary hover:underline"
+            className={`hover:underline ${dark ? "text-blue-400" : "text-primary"}`}
           >
             LeetCode
           </a>
@@ -79,19 +84,25 @@ export default function Contact() {
         }}
       >
         <input
-          className="w-full p-4 rounded-xl bg-gray-100 dark:bg-gray-800 focus:ring-2 focus:ring-primary outline-none transition"
+          className={`w-full p-4 rounded-xl focus:ring-2 outline-none transition ${
+            dark ? "bg-gray-800 text-white focus:ring-blue-500" : "bg-gray-100 focus:ring-primary"
+          }`}
           placeholder="Your Name"
         />
 
         <input
-          className="w-full p-4 rounded-xl bg-gray-100 dark:bg-gray-800 focus:ring-2 focus:ring-primary outline-none transition"
+          className={`w-full p-4 rounded-xl focus:ring-2 outline-none transition ${
+            dark ? "bg-gray-800 text-white focus:ring-blue-500" : "bg-gray-100 focus:ring-primary"
+          }`}
           type="email"
           placeholder="Your Email"
           required
         />
 
         <textarea
-          className="w-full p-4 rounded-xl bg-gray-100 dark:bg-gray-800 focus:ring-2 focus:ring-primary outline-none transition"
+          className={`w-full p-4 rounded-xl focus:ring-2 outline-none transition ${
+            dark ? "bg-gray-800 text-white focus:ring-blue-500" : "bg-gray-100 focus:ring-primary"
+          }`}
           rows="4"
           placeholder="Message"
           required
