@@ -1,3 +1,4 @@
+
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -85,25 +86,31 @@ export default function Contact({ dark }) {
       >
         <input
           className={`w-full p-4 rounded-xl focus:ring-2 outline-none transition ${
-            dark ? "bg-gray-800 text-white focus:ring-blue-500" : "bg-gray-100 focus:ring-primary"
+            dark
+              ? "bg-gray-800 text-white placeholder-gray-400 focus:ring-blue-500"
+              : "bg-gray-100 placeholder-gray-500 focus:ring-primary"
           }`}
           placeholder="Your Name"
         />
 
         <input
-          className={`w-full p-4 rounded-xl focus:ring-2 outline-none transition ${
-            dark ? "bg-gray-800 text-white focus:ring-blue-500" : "bg-gray-100 focus:ring-primary"
-          }`}
           type="email"
+          className={`w-full p-4 rounded-xl focus:ring-2 outline-none transition ${
+            dark
+              ? "bg-gray-800 text-white placeholder-gray-400 focus:ring-blue-500"
+              : "bg-gray-100 placeholder-gray-500 focus:ring-primary"
+          }`}
           placeholder="Your Email"
           required
         />
 
         <textarea
-          className={`w-full p-4 rounded-xl focus:ring-2 outline-none transition ${
-            dark ? "bg-gray-800 text-white focus:ring-blue-500" : "bg-gray-100 focus:ring-primary"
-          }`}
           rows="4"
+          className={`w-full p-4 rounded-xl focus:ring-2 outline-none transition ${
+            dark
+              ? "bg-gray-800 text-white placeholder-gray-400 focus:ring-blue-500"
+              : "bg-gray-100 placeholder-gray-500 focus:ring-primary"
+          }`}
           placeholder="Message"
           required
         />

@@ -1,23 +1,31 @@
 #root {
-  max-width: 1280px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   text-align: center;
+  box-sizing: border-box;
 }
 
+/* Logo */
 .logo {
-  height: 6em;
-  padding: 1.5em;
+  height: 5em;
+  max-width: 100%;
+  padding: 1em;
   will-change: filter;
   transition: filter 300ms;
 }
+
+/* Hover effects */
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 1.5em #646cffaa);
 }
 
+.logo.react:hover {
+  filter: drop-shadow(0 0 1.5em #61dafbaa);
+}
+
+/* Animation */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,16 +35,59 @@
   }
 }
 
+/* Animation only if motion allowed */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* Card */
 .card {
-  padding: 2em;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
 }
 
+/* Docs text */
 .read-the-docs {
   color: #888;
+  font-size: 0.9rem;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  #root {
+    padding: 1rem;
+  }
+
+  .logo {
+    height: 4em;
+    padding: 0.8em;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  #root {
+    padding: 0.8rem;
+  }
+
+  .logo {
+    height: 3em;
+    padding: 0.5em;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .read-the-docs {
+    font-size: 0.8rem;
+  }
 }

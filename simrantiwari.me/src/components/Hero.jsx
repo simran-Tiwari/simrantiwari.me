@@ -1,13 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import simranImg from "../assets/simran.jpg";
+import simranImg from "../assets/simran.jpeg";
 
 export default function Hero({ dark }) {
   const handleResumeDownload = () => {
-    const resumeUrl = "/Simran_Tiwari_Resume.pdf";
+    const resumeUrl = "/SimranTiwariResume.pdf";
     const link = document.createElement("a");
     link.href = resumeUrl;
-    link.download = "Simran_Tiwari_Resume.pdf";
+    link.download = "SimranTiwariResume.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
