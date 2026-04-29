@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import shopverseImg from "../assets/shopverse.png";
 import zoomeraImg from "../assets/zoomera.png";
 import acceldedupImg from "../assets/acceldedup.png";
-import devoasisImg from "../assets/devaosis.png";
+import sentimentImg from "../assets/sentiment.png";
 
 export default function Projects({ dark }) {
   const projects = [
@@ -30,12 +30,12 @@ export default function Projects({ dark }) {
       img: acceldedupImg,
     },
     {
-      title: "Devoasis",
-      url: "https://devaosis.vercel.app/",
-      github: "https://github.com/simran-Tiwari/Devaosis",
-      tech: "React + Firebase",
-      img: devoasisImg,
-    },
+  title: "Sentiment Analyzer",
+  url: "https://sentiment-analyzer-gray.vercel.app/",
+  github: "https://github.com/simran-Tiwari/sentimentAnalyzer", 
+  tech: "React, NLP API",
+  img: sentimentImg, 
+},
   ];
 
   return (
