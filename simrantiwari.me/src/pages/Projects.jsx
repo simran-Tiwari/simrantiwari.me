@@ -5,6 +5,7 @@ import shopverseImg from "../assets/shopverse.png";
 import zoomeraImg from "../assets/zoomera.png";
 import acceldedupImg from "../assets/acceldedup.png";
 import sentimentImg from "../assets/sentiment.png";
+import companioImg from "../assets/companio.png";
 
 export default function Projects({ dark }) {
   const projects = [
@@ -23,20 +24,28 @@ export default function Projects({ dark }) {
       img: zoomeraImg,
     },
     {
+      title: "Companio",
+      url: "https://companio-eta.vercel.app",
+      github: "https://github.com/simran-Tiwari/Companio",
+      tech: "React, Node.js, AWS",
+      img: companioImg,
+    },
+    {
       title: "AccelDedup",
       url: "https://project-major-client.vercel.app/login",
       github: "https://github.com/simran-Tiwari/AccelDedup",
-      tech: "React, Node.js, AWS",
+      tech: "React.js, Node.js, Express.js, MySQL, Socket.io, Redis, Razorpay, Twilio, JWT",
       img: acceldedupImg,
     },
     {
-  title: "Sentiment Analyzer",
-  url: "https://sentiment-analyzer-gray.vercel.app/",
-  github: "https://github.com/simran-Tiwari/sentimentAnalyzer", 
-  tech: "React, NLP API",
-  img: sentimentImg, 
-},
-  ];
+      title: "Sentiment Analyzer",
+      url: "https://sentiment-analyzer-gray.vercel.app/",
+      github: "https://github.com/simran-Tiwari/sentimentAnalyzer", 
+      tech: "React, NLP API",
+      img: sentimentImg, 
+    }
+];
+  
 
   return (
     <section
