@@ -6,6 +6,7 @@ import zoomeraImg from "../assets/zoomera.png";
 import acceldedupImg from "../assets/acceldedup.png";
 import sentimentImg from "../assets/sentiment.png";
 import companioImg from "../assets/companio.png";
+import dailySyncImg from "../assets/dailysync.png";
 
 export default function Projects({ dark }) {
   const projects = [
@@ -29,6 +30,13 @@ export default function Projects({ dark }) {
       github: "https://github.com/simran-Tiwari/Companio",
       tech: "React, Node.js, AWS",
       img: companioImg,
+    },
+    {
+      title: "DailySync",
+      url: "https://daily-sync-two.vercel.app",
+      github: "https://github.com/simran-Tiwari/Daily_Sync",
+      tech: "Angular, Node.js, Express, MongoDB, JWT",
+      img: dailySyncImg,
     },
     {
       title: "AccelDedup",
